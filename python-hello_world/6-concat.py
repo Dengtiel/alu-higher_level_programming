@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-str1 = "Welcome to"
-str2 = "Battery Street"
-str3 = str1 + " " + str2
-print(f"{str3}!")
+str1 = "Holberton"
+str2 = "School"
+# YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE
+print(f"Welcome to {str1}!")
