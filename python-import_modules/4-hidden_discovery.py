@@ -6,7 +6,9 @@ if __name__ == "__main__":
     names = dir(hidden_4)
 
     # Filter names that do not start with "__" and sort them
-    filtered_names = sorted(name for name in names if not name.startswith("__"))
+    filtered_names = sorted(
+        name for name in names if not name.startswith("__")
+    )
 
     # Print each name on a new line
     for name in filtered_names:
