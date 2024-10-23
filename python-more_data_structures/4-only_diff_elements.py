@@ -2,5 +2,6 @@
 def only_diff_elements(set_1, set_2):
     """
     Returns a set of all elements present in only one set.
+    Using symmetric_difference to find unique elements.
     """
-    return set_1.symmetric_difference(set_2)  # Using symmetric_difference to find unique elements
+    return set_1.symmetric_difference(set_2)
