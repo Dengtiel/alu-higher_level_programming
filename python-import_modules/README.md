@@ -21,3 +21,11 @@ This directory contains examples of argument handling in Python scripts.
 
 ## Files:
 - `2-args.py`: A program that prints the number of and lists the arguments passed to it.
+
+# Python Import Modules
+
+This directory contains examples of handling command-line arguments and performing arithmetic operations in Python scripts.
+
+## Files:
+- `3-infinite_add.py`: A program that prints the result of the addition of all command-line arguments.
+
