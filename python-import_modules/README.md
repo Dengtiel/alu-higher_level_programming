@@ -29,3 +29,11 @@ This directory contains examples of handling command-line arguments and performi
 ## Files:
 - `3-infinite_add.py`: A program that prints the result of the addition of all command-line arguments.
 
+
+# Python Import Modules
+
+This directory contains examples of handling Python modules and retrieving their attributes.
+
+## Files:
+- `hidden_4.pyc`: A compiled Python module.
+- `4-hidden_discovery.py`: A program that prints all names defined by `hidden_4.pyc` excluding special names.
