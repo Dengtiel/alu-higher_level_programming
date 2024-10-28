@@ -1,16 +1,20 @@
 #!/usr/bin/python3
 """
-This module defines the Rectangle class, representing a rectangle
-with width and height properties, and methods for calculating
+This module defines the Rectangle class,
+representing a rectangle
+with width and height properties, and methods
+for calculating
 area and perimeter.
 """
 
 
 class Rectangle:
-    """Represents a rectangle with width and height properties."""
+    """Represents a rectangle with width and
+    height properties."""
 
     def __init__(self, width=0, height=0):
-        """Initializes a rectangle with optional width and height."""
+        """Initializes a rectangle with optional width 
+        and height."""
         self.width = width
         self.height = height
 
@@ -53,7 +57,8 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        """Returns a string representation of the rectangle using '#' characters."""
+        """Returns a string representation of the rectangle
+        using '#' characters."""
         if self.width == 0 or self.height == 0:
             return ""
         return "\n".join("#" * self.width for _ in range(self.height))
