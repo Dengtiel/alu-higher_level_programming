@@ -105,7 +105,7 @@ class Rectangle:
         Returns:
             str: A string that represents the rectangle object.
         """
-        return f"Rectangle({self.width}, {self.height})"
+        return f"<{self.__class__.__module__}.{self.__class__.__name__} object at {hex(id(self))}>"
 
 # Testing the Rectangle class
 if __name__ == "__main__":
@@ -115,3 +115,9 @@ if __name__ == "__main__":
     print(str(my_rectangle))     # Print using str()
     print(repr(my_rectangle))    # Print using repr()
     print(my_rectangle)          # Print using print(my_rectangle)
+    
+    print("--")  # Separator for clarity
+    my_rectangle2 = Rectangle(10, 3)
+    print(str(my_rectangle2))    # Print a larger rectangle
+    print(repr(my_rectangle2))    # Print using repr()
+    print(my_rectangle2)          # Print my_rectangle2
