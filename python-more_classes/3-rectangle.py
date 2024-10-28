@@ -60,12 +60,15 @@ class Rectangle:
 
     def __repr__(self):
         """Returns a string representation of the rectangle for debugging."""
-        return f"<{self.__class__.__module__}.{self.__class__.__name__} object at {hex(id(self))}>"
+        return (f"<{self.__class__.__module__}."
+                f"{self.__class__.__name__} object at {hex(id(self))}>")
 
 # Testing the Rectangle class
 if __name__ == "__main__":
     my_rectangle = Rectangle(2, 4)
-    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+    print("Area: {} - Perimeter: {}".format(
+        my_rectangle.area(), my_rectangle.perimeter()
+    ))
 
     print(str(my_rectangle))     # Print using str()
     print(repr(my_rectangle))    # Print using repr()
