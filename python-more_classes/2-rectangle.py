@@ -5,6 +5,7 @@ with width and height properties, and methods for calculating
 area and perimeter.
 """
 
+
 class Rectangle:
     """Represents a rectangle with width and height properties."""
 
