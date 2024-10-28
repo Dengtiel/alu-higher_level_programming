@@ -106,3 +106,12 @@ class Rectangle:
             str: A string that represents the rectangle object.
         """
         return f"Rectangle({self.width}, {self.height})"
+
+# Testing the Rectangle class
+if __name__ == "__main__":
+    my_rectangle = Rectangle(2, 4)
+    print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+    print(str(my_rectangle))     # Print using str()
+    print(repr(my_rectangle))    # Print using repr()
+    print(my_rectangle)          # Print using print(my_rectangle)
