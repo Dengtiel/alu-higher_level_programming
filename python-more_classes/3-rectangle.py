@@ -60,8 +60,8 @@ class Rectangle:
 
     def __repr__(self):
         """Returns a string representation of the rectangle for debugging."""
-        return (f"<{self.__class__.__module__}."
-                f"{self.__class__.__name__} object at {hex(id(self))}>")
+        return (f"<{self.__class__.__module__}.{self.__class__.__name__} "
+                f"object at {hex(id(self))}>")
 
 # Testing the Rectangle class
 if __name__ == "__main__":
