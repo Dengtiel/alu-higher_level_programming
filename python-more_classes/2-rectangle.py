@@ -5,7 +5,6 @@ with width and height properties, and methods for calculating
 area and perimeter.
 """
 
-
 class Rectangle:
     """Represents a rectangle with width and height properties."""
 
@@ -85,4 +84,4 @@ class Rectangle:
         """
         if self.width == 0 or self.height == 0:
             return 0
-        return 2 * (self.width + self.height) 
+        return 2 * (self.width + self.height)
