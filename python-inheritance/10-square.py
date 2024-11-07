@@ -8,7 +8,8 @@ Rectangle = __import__('9-rectangle').Rectangle
 
 class Square(Rectangle):
     """
-    Represents a square, which is a special type of rectangle with equal width and height.
+    Represents a square, which is a special type of\
+            rectangle with equal width and height.
     """
 
     def __init__(self, size):
