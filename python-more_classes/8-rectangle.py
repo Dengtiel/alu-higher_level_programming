@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """Module that defines a Rectangle class."""
 
+
 class Rectangle:
     """A class that defines a rectangle by width and height.
 
     Attributes:
-        number_of_instances (int): The number of Rectangle instances created.
-        print_symbol (any): The symbol used for string representation of the rectangle.
-    """
-    
-
+        number_of_instances (int): number of Rectangle instances created.
+        print_symbol (any): The symbol used for string depicting the rectangle.
+  """ 
     number_of_instances = 0
     print_symbol = "#"
 
@@ -36,7 +35,7 @@ class Rectangle:
         Args:
             value (int): The width of the rectangle.
         
-        Raises:
+       Raises:
             TypeError: If width is not an integer.
             ValueError: If width is less than 0.
         """
@@ -83,7 +82,7 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the string representation of the rectangle using print_symbol."""
+        """Return the string depicting the rectangle using print_symbol."""
         if self.__width == 0 or self.__height == 0:
             return ""
         return (str(self.print_symbol) * self.__width + "\n") * self.__height
@@ -101,15 +100,15 @@ class Rectangle:
     def bigger_or_equal(rect_1, rect_2):
         """Return the rectangle with the larger area.
 
-        Args:
+      Args:
             rect_1 (Rectangle): The first rectangle.
             rect_2 (Rectangle): The second rectangle.
         
-        Raises:
+     Raises:
             TypeError: If rect_1 or rect_2 is not an instance of Rectangle.
         
-        Returns:
-            Rectangle: The rectangle with the greater area, or rect_1 if both areas are equal.
+    Returns:
+            Rectangle: with the greater area, or rect_1 if both areas are equal.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -121,9 +120,9 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Class method that returns a new Rectangle instance with width == height == size.
+        """Class returns new Rectangle instance with width == height == size.
 
-        Args:
+      Args:
             size (int): The size of the square.
         
         Returns:
