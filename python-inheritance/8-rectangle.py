@@ -1,17 +1,24 @@
 #!/usr/bin/python3
+"""
+This module defines a Rectangle class that inherits from BaseGeometry.
+"""
+
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 
 class Rectangle(BaseGeometry):
     """
-    A class to represent a rectangle, inheriting from BaseGeometry.
+    Represents a rectangle using the BaseGeometry class for validation.
     """
 
     def __init__(self, width, height):
         """
-        Initializes a new Rectangle instance.
+        Initialize a new Rectangle instance, validating width and height.
 
-        :param width: The width of the rectangle, validated as a positive integer
-        :param height: The height of the rectangle, validated as a positive integer
+        :param width: The width of the rectangle; must be a positive integer
+        :param height: The height of the rectangle; must be a positive integer
+        :raises TypeError: If width or height is not an integer
+        :raises ValueError: If width or height is not a positive integer
         """
         self.integer_validator("width", width)
         self.__width = width
