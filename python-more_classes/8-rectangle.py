@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 
 """
-Module that defines a Rectangle class with attributes, methods, and 
+Module that defines a Rectangle class with 
+attributes, methods, and 
 validation to model a rectangular shape.
 
 
-The Rectangle class supports instance creation with optional width and height, 
-calculations for area and perimeter, and comparison of two rectangles based on 
-their area. It also includes string representation and class-level tracking 
+The Rectangle class supports instance creation with 
+optional width and height, 
+calculations for area and perimeter, and comparison
+of two rectangles based on
+their area. It also includes string representation
+and class-level tracking 
 for the number of instances created.
 """
 
@@ -21,16 +25,20 @@ class Rectangle:
     for printing and debugging.
 
     Class Attributes:
-        number_of_instances (int): A count of the number of Rectangle instances.
-        print_symbol (str): The symbol used for string representation of the rectangle.
+        number_of_instances (int): 
+        A count of the number of Rectangle instances.
+        print_symbol (str): 
+        The symbol used for string representation of the rectangle.
     """
     number_of_instances = 0
     print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """
-        Initializes the Rectangle instance with optional width and height.
-        The class-level counter for instances is incremented upon creation.
+        Initializes the Rectangle instance
+        with optional width and height.
+        The class-level counter for instances
+        is incremented upon creation.
         
         :param width: The width of the rectangle, default is 0.
         :param height: The height of the rectangle, default is 0.
@@ -51,7 +59,8 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """
-        Sets the width of the rectangle with validation checks for the type 
+        Sets the width of the rectangle with 
+        validation checks for the type 
         and non-negative value.
 
         :param value: The width value to set.
@@ -76,7 +85,8 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """
-        Sets the height of the rectangle with validation checks for the type 
+        Sets the height of the rectangle with
+        validation checks for the type 
         and non-negative value.
 
         :param value: The height value to set.
@@ -101,9 +111,9 @@ class Rectangle:
         """
         Calculates and returns the perimeter of the rectangle.
         
-        If either width or height is zero, the perimeter is considered 0.
+        If either width or height is zero, p considered 0.
         
-        :return: The perimeter of the rectangle, or 0 if either width or height is 0.
+        :return: The perimeter, or 0 if either width or height is 0.
         """
         if self.width == 0 or self.height == 0:
             return 0
@@ -111,25 +121,26 @@ class Rectangle:
 
     def __str__(self):
         """
-        Returns a string representation of the rectangle using the print symbol.
+        Returns a string of the rectangle using the print symbol.
 
-        :return: A string consisting of print_symbol to visually represent the rectangle.
+        :return: A string consisting of print_symbol to depict rectangle.
         """
         if self.width == 0 or self.height == 0:
             return ""
-        return "\n".join([str(self.print_symbol) * self.width for _ in range(self.height)])
+        return "\n".join([str(self.print_symbol) 
+            * self.width for _ in range(self.height)])
 
     def __repr__(self):
         """
-        Returns a formal string representation for recreating the rectangle.
+        Returns a formal string for recreating the rectangle.
 
-        :return: A string that can be used with eval() to create a new instance.
+        :return: A string  used with eval() to create a new instance.
         """
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
         """
-        Handles deletion of a Rectangle instance. Decreases the number_of_instances 
+        Handles deletion. Decreases the number_of_instances 
         counter and prints a message when the instance is deleted.
         """
         Rectangle.number_of_instances -= 1
@@ -142,8 +153,8 @@ class Rectangle:
 
         :param rect_1: The first rectangle to compare.
         :param rect_2: The second rectangle to compare.
-        :return: The rectangle with the largest area, or rect_1 if areas are equal.
-        :raises TypeError: If either rect_1 or rect_2 is not an instance of Rectangle.
+        :return:  with the largest area, or rect_1 if areas are equal.
+        :raises TypeError: If either rect_1 or rect_2 is not an instance.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -152,4 +163,3 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
-
