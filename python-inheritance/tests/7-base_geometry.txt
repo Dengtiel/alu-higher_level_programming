@@ -17,23 +17,53 @@ class TestBaseGeometry(unittest.TestCase):
         """Test integer_validator with a valid integer."""
         self.bg.integer_validator("my_int", 10)  # Should pass without exception
 
-    def test_integer_validator_with_non_integer(self):
-        """Test integer_validator raises TypeError with non-integer value."""
-        with self.assertRaises(TypeError) as context:
-            self.bg.integer_validator("my_int", "not an integer")
-        self.assertEqual(str(context.exception), "my_int must be an integer")
-
     def test_integer_validator_with_zero(self):
         """Test integer_validator raises ValueError for zero."""
         with self.assertRaises(ValueError) as context:
-            self.bg.integer_validator("my_int", 0)
-        self.assertEqual(str(context.exception), "my_int must be greater than 0")
+            self.bg.integer_validator("age", 0)
+        self.assertEqual(str(context.exception), "age must be greater than 0")
 
     def test_integer_validator_with_negative(self):
         """Test integer_validator raises ValueError for negative integers."""
         with self.assertRaises(ValueError) as context:
-            self.bg.integer_validator("my_int", -5)
-        self.assertEqual(str(context.exception), "my_int must be greater than 0")
+            self.bg.integer_validator("age", -4)
+        self.assertEqual(str(context.exception), "age must be greater than 0")
+
+    def test_integer_validator_with_non_integer_string(self):
+        """Test integer_validator raises TypeError with a string value."""
+        with self.assertRaises(TypeError) as context:
+            self.bg.integer_validator("age", "4")
+        self.assertEqual(str(context.exception), "age must be an integer")
+
+    def test_integer_validator_with_tuple(self):
+        """Test integer_validator raises TypeError with a tuple value."""
+        with self.assertRaises(TypeError) as context:
+            self.bg.integer_validator("age", (4,))
+        self.assertEqual(str(context.exception), "age must be an integer")
+
+    def test_integer_validator_with_list(self):
+        """Test integer_validator raises TypeError with a list value."""
+        with self.assertRaises(TypeError) as context:
+            self.bg.integer_validator("age", [3])
+        self.assertEqual(str(context.exception), "age must be an integer")
+
+    def test_integer_validator_with_boolean(self):
+        """Test integer_validator raises TypeError with a boolean value."""
+        with self.assertRaises(TypeError) as context:
+            self.bg.integer_validator("age", True)
+        self.assertEqual(str(context.exception), "age must be an integer")
+
+    def test_integer_validator_with_set(self):
+        """Test integer_validator raises TypeError with a set value."""
+        with self.assertRaises(TypeError) as context:
+            self.bg.integer_validator("age", {3, 4})
+        self.assertEqual(str(context.exception), "age must be an integer")
+
+    def test_integer_validator_with_none(self):
+        """Test integer_validator raises TypeError with a None value."""
+        with self.assertRaises(TypeError) as context:
+            self.bg.integer_validator("age", None)
+        self.assertEqual(str(context.exception), "age must be an integer")
 
 if __name__ == "__main__":
     unittest.main()
