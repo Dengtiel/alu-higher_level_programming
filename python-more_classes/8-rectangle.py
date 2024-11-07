@@ -1,23 +1,17 @@
-#!/usr/bin/python3
-"""Module that defines a Rectangle class."""
-
-
 class Rectangle:
-    """A class that defines a rectangle by width and height.
-
-    Attributes:
-        number_of_instances (int): number of Rectangle instances created.
-        print_symbol (any): The symbol used for string depicting the rectangle.
-    """
+    # Class attribute for tracking the number of instances
     number_of_instances = 0
-    print_symbol = "#"
+    # Class attribute for setting the print symbol
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle instance.
+        """
+        Initializes the Rectangle instance with width and height.
+        Increment the class attribute number_of_instances upon instantiation.
+        
 
-        Args:
-            width (int): The width of the rectangle. Defaults to 0.
-            height (int): The height of the rectangle. Defaults to 0.
+        :param width: Width of the rectangle, default is 0
+        :param height: Height of the rectangle, default is 0
         """
         self.width = width
         self.height = height
@@ -25,19 +19,19 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get the width of the rectangle."""
+        """
+        Returns the width of the rectangle.
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Set the width of the rectangle.
-
-        Args:
-            value (int): The width of the rectangle.
-
-        Raises:
-            TypeError: If width is not an integer.
-            ValueError: If width is less than 0.
+        """
+        Sets the width of the rectangle with validation.
+        
+        :param value: The width to set
+        :raises TypeError: If value is not an integer
+        :raises ValueError: If value is less than 0
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -47,19 +41,19 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the height of the rectangle."""
+        """
+        Returns the height of the rectangle.
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Set the height of the rectangle.
-
-        Args:
-            value (int): The height of the rectangle.
-
-        Raises:
-            TypeError: If height is not an integer.
-            ValueError: If height is less than 0.
+        """
+        Sets the height of the rectangle with validation.
+        
+        :param value: The height to set
+        :raises TypeError: If value is not an integer
+        :raises ValueError: If value is less than 0
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -68,42 +62,63 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """Return the area of the rectangle."""
-        return self.__width * self.__height
+        """
+        Calculates the area of the rectangle.
+        
+        :returns: The area of the rectangle
+        """
+        return self.width * self.height
 
     def perimeter(self):
-        """Return the perimeter of the rectangle.
-
-        Returns:
-            int: The perimeter of the rectangle, or 0 if width or height is 0.
         """
-        if self.__width == 0 or self.__height == 0:
+        Calculates the perimeter of the rectangle.
+        
+        :returns: The perimeter of the rectangle, or 0 if either width or height is 0
+        """
+        if self.width == 0 or self.height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height)
 
     def __str__(self):
-        """Return the string depicting the rectangle using print_symbol."""
-        if self.__width == 0 or self.__height == 0:
+        """
+        Returns a string representation of the rectangle using the print symbol.
+        
+        :returns: A string that represents the rectangle using the print symbol
+        """
+        if self.width == 0 or self.height == 0:
             return ""
-        return (str(self.print_symbol) * self.__width + "\n") * self.__height
+        return "\n".join([str(self.print_symbol) * self.width for _ in range(self.height)])
 
     def __repr__(self):
-        """Return a string representation of the rectangle for recreation."""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        """
+        Returns a formal string representation for recreating the rectangle.
+        
+        :returns: A string that can be used with eval() to create a new instance of the rectangle
+        """
+        return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
-        """Print a message when an instance of Rectangle is deleted."""
+        """
+        Handles deletion of a Rectangle instance. Decreases the class attribute number_of_instances 
+        and prints a message when the instance is deleted.
+        """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Return the rectangle with the larger area.
-
-        Args:
-            rect_1 (Rectangle): The first rectangle.
-            rect_2 (Rectangle): The second rectangle.
         """
+        Compares two rectangles and returns the one with the largest area.
+        
+        :param rect_1: The first rectangle to compare
+        :param rect_2: The second rectangle to compare
+        :returns: The rectangle with the largest area, or rect_1 if they have the same area
+        :raises TypeError: If either rect_1 or rect_2 is not an instance of Rectangle
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
