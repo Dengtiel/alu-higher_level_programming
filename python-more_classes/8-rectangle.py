@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Rectangle:
     # Class attribute for tracking the number of instances
     number_of_instances = 0
