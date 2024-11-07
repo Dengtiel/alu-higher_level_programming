@@ -1,0 +1,40 @@
+#!/usr/bin/python3
+import unittest
+from python_inheritance import BaseGeometry
+
+class TestBaseGeometry(unittest.TestCase):
+    def setUp(self):
+        """Set up an instance of BaseGeometry for testing."""
+        self.bg = BaseGeometry()
+
+    def test_area_not_implemented(self):
+        """Test that area() raises an Exception."""
+        with self.assertRaises(Exception) as context:
+            self.bg.area()
+        self.assertEqual(str(context.exception), "area() is not implemented")
+
+    def test_integer_validator_with_valid_integer(self):
+        """Test integer_validator with a valid integer."""
+        self.bg.integer_validator("my_int", 10)
+
+    def test_integer_validator_with_non_integer(self):
+        """Test integer_validator raises TypeError with non-integer value."""
+        with self.assertRaises(TypeError) as context:
+            self.bg.integer_validator("my_int", "not an integer")
+        self.assertEqual(str(context.exception), "my_int must be an integer")
+
+    def test_integer_validator_with_zero(self):
+        """Test integer_validator raises ValueError for zero."""
+        with self.assertRaises(ValueError) as context:
+            self.bg.integer_validator("my_int", 0)
+        self.assertEqual(str(context.exception), "my_int must be greater than 0")
+
+    def test_integer_validator_with_negative(self):
+        """Test integer_validator raises ValueError for negative integers."""
+        with self.assertRaises(ValueError) as context:
+            self.bg.integer_validator("my_int", -5)
+        self.assertEqual(str(context.exception), "my_int must be greater than 0")
+
+if __name__ == "__main__":
+    unittest.main()
+
