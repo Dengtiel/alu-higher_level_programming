@@ -57,7 +57,7 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        """Returns a string representation of the rectangle with specified symbol."""
+        """Returns a string showing the rectangle with specified symbol."""
         if self.width == 0 or self.height == 0:
             return ""
         return "\n".join(
@@ -65,7 +65,7 @@ class Rectangle:
         )
 
     def __repr__(self):
-        """Returns a string representation that can recreate the rectangle instance."""
+        """Returns a string that can recreate the rectangle instance."""
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
