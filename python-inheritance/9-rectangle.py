@@ -8,7 +8,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """
-    Represents a rectangle, inheriting from 
+    Represents a rectangle, inheriting from
     BaseGeometry for validation and area calculation.
     """
 
@@ -29,7 +29,6 @@ class Rectangle(BaseGeometry):
     def area(self):
         """
         Calculates and returns the area of the rectangle.
-        
         :return: The area of the rectangle (width * height)
         """
         return self.__width * self.__height
@@ -38,7 +37,7 @@ class Rectangle(BaseGeometry):
         """
         Returns a string representation of the rectangle in
         the format: [Rectangle] <width>/<height>.
-        
+
         :return: String description of the rectangle
         """
         return f"[Rectangle] {self.__width}/{self.__height}"
