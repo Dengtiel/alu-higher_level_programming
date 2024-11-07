@@ -29,7 +29,8 @@ def solve_nqueens(n, row=0, solution=[]):
 
 
 def main():
-    """Main function to parse input and initiate the N Queens solution search."""
+    """Main function to parse input and initiate the
+    N Queens solution search."""
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
