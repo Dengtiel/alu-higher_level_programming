@@ -27,8 +27,7 @@ class Square(Rectangle):
 
     def area(self):
         """
-        Calculates and returns the area of the square.
-        
+        Calculates and returns the area of the square.     
         :return: The area of the square (size * size)
         """
         return self.__size ** 2
@@ -37,7 +36,6 @@ class Square(Rectangle):
         """
         Returns the string representation of the square
         in the format [Square] <size>/<size>.
-        
         :return: Formatted string representation of the square
         """
         return f"[Square] {self.__size}/{self.__size}"
