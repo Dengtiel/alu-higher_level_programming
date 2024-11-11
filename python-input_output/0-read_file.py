@@ -7,6 +7,7 @@ It includes a function that reads a text file and\
         prints its contents to stdout.
 """
 
+
 def read_file(filename=""):
     """
     Reads a text file (UTF8) and prints its content to stdout.
