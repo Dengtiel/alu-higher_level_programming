@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 class Student:
     """Class to define a student."""
-
+    
 
     def __init__(self, first_name, last_name, age):
         """Initialize the student with first_name,\
