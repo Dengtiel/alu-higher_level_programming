@@ -7,6 +7,7 @@ This module provides a function to load a Python\
 
 import json
 
+
 def load_from_json_file(filename):
     """
     Creates a Python object from a JSON file.
