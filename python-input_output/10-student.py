@@ -18,18 +18,21 @@ class Student:
 
     def to_json(self, attrs=None):
         """
-        Retrieve a dictionary representation of the\
-                Student instance, optionally filtering 
+        Retrieve a dictionary representation of the Student instance, optionally filtering 
         by attributes in the attrs list.
 
+        If attrs is provided, only the attributes that appear in the list will be included 
+        in the returned dictionary. Otherwise, all attributes of the Student instance will 
+        be included.
+
         Args:
-            attrs (list, optional): A list of attribute\
-                    names to include in the dictionary.
+            attrs (list, optional): A list of attribute names to include in the dictionary.
 
         Returns:
-            dict: The dictionary representation of the student.
+            dict: The dictionary representation of the student, with the specified attributes.
         """
         if attrs is None:
             return self.__dict__
         else:
             return {key: value for key, value in self.__dict__.items() if key in attrs}
+
