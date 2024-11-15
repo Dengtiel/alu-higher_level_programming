@@ -1,16 +1,13 @@
-# MySQL User Privileges
+# MySQL Privileges Script
 
-This script is used to list the privileges of MySQL users.
+## Description
+This script lists all privileges of the MySQL users `user_0d_1` and `user_0d_2` on your server (localhost). The script outputs the `GRANT` statements for each user to show what privileges they have been granted.
 
-## SQL Script:
+## SQL Script
+The script queries the privileges for the specified users using the `SHOW GRANTS` command.
 
--- Script that lists all privileges of the MySQL users  
--- Query to list all privileges (GRANT) of the MySQL users  
-SHOW GRANTS FOR 'user_0d_1'@'localhost';  
-SHOW GRANTS FOR 'user_0d_2'@'localhost';  
-
-## Expected Outputs:
-
-1. **If the users don't exist**:  
-   Correct output:  
-
+```sql
+-- Script that lists all privileges of the MySQL users
+-- Query to list all privileges (GRANT) of the MySQL users
+SHOW GRANTS FOR 'user_0d_1'@'localhost';
+SHOW GRANTS FOR 'user_0d_2'@'localhost';
