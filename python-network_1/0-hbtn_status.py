@@ -2,7 +2,6 @@
 """
 Fetches http://0.0.0.0:5050/status and displays information about the response.
 """
-
 import urllib.request
 
 if __name__ == "__main__":
