@@ -1,6 +1,10 @@
-# Python Network - Fetching URL Status
+# Python Network - Fetch URL Status
 
-This script fetches the status of `https://alu-intranet.hbtn.io/status` using the `urllib` library.  
-It reads and decodes the response body, displaying its type, raw content, and UTF-8 content.  
-The script ensures proper resource management with a `with` statement.  
-Make it executable with `chmod +x` and run it to see the output.
+## Description
+This project demonstrates how to fetch and display the status of a URL using Python's `urllib` library.  
+It ensures proper resource handling and meets all PEP 8 and documentation requirements.
+
+## Usage
+Run the script to fetch the status of a URL (default: `http://0.0.0.0:5050/status`):  
+```bash
+./0-hbtn_status.py
