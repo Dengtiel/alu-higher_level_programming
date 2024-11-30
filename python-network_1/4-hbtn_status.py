@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import requests
 
+
 """
 This script fetches the status from the URL https://alu-intranet.hbtn.io/status
 and prints the response's type and content in a specific format.
